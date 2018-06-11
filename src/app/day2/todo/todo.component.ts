@@ -10,6 +10,12 @@ export class TodoComponent implements OnInit {
     task = ["Learn Angular 6", "Read about Eureka", "Have some fun ont he beach", "Jalebis in evening"]
     onetask = ""
 
+    money = 50
+    myDate = new Date()
+
+    scores = [10, 8, 9, 5, 22 ]
+    fruits = ["Banana", "Orange", "Apple", "Mango"];
+
     addTask = function(){
       console.log("addtask function called")
       this.task.push(this.onetask)
@@ -24,6 +30,7 @@ export class TodoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -12,7 +12,16 @@ Add Task: <input type="text" [(ngModel)]="onetask">
   <li *ngFor="let mytask of task; let currentTask = index" >
     Task {{currentTask}}: {{mytask | uppercase}} <button (click) = "removeTask(currentTask)">Done</button>
   </li>
-  
+  <br>
+
+  Money: {{money | currency:'EUR'}} <br>
+  Date: {{ myDate | date:'d/MM/y'}} <br>
+
+  Percent: {{ money/100 | percent:'2.0' }} <br>
+  Numbers without sortPipe: {{scores }} <br>
+  Numbers with sortPipe: {{ scores | sortNumber:'dsc' }} <br>
+  Fruits: {{fruits | sortNumber}}
 
 </ul>
+
 
