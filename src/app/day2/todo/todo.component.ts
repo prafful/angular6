@@ -16,6 +16,9 @@ export class TodoComponent implements OnInit {
     scores = [10, 8, 9, 5, 22 ]
     fruits = ["Banana", "Orange", "Apple", "Mango"];
 
+    sortString = "asc"
+    
+
     addTask = function(){
       console.log("addtask function called")
       this.task.push(this.onetask)
@@ -25,6 +28,12 @@ export class TodoComponent implements OnInit {
     removeTask = function(received){
       console.log("removing this task")
       this.task.splice(received, 1)
+    }
+
+    sortNumberAsc = function(){
+      console.log("sort dsc")
+      this.sortString="dsc"
+      console.log(this.sortString)
     }
 
   constructor() { }

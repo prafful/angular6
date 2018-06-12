@@ -2,11 +2,11 @@
   todo works!
 </p>
 
-<h3>Task List</h3>
+<h3>Task List Simple</h3>
 
 Add Task: <input type="text" [(ngModel)]="onetask"> 
 <button (click)="addTask()">Add Task</button>
-
+<br>
 
 <ul>
   <li *ngFor="let mytask of task; let currentTask = index" >
@@ -19,6 +19,7 @@ Add Task: <input type="text" [(ngModel)]="onetask">
 
   Percent: {{ money/100 | percent:'2.0' }} <br>
   Numbers without sortPipe: {{scores }} <br>
+  <button (click)="sortNumberAsc()">Sort</button><br>
   Numbers with sortPipe: {{ scores | sortNumber:'dsc' }} <br>
   Fruits: {{fruits | sortNumber}}
 

@@ -13,6 +13,8 @@ import { FamilyComponent } from './family/family/family.component';
 import { SortPipePipe } from './my-pipes/sort-pipe.pipe';
 import { TemplateformComponent } from './forms/template/templateform/templateform.component';
 import { ModelformComponent } from './forms/template/modelform/modelform.component';
+import { AutoSearchComponent } from './search/auto-search/auto-search.component';
+import { SearchFilterPipe } from './my-pipes/search-filter.pipe';
 
 
 const myRoutes: Routes = [
@@ -45,6 +47,10 @@ const myRoutes: Routes = [
           {
             path:'model',
             component:ModelformComponent
+          },
+          {
+             path:'searchfilter',
+             component:AutoSearchComponent 
           }
 ]
 
@@ -59,7 +65,9 @@ const myRoutes: Routes = [
     FamilyComponent,
     SortPipePipe,
     TemplateformComponent,
-    ModelformComponent
+    ModelformComponent,
+    AutoSearchComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

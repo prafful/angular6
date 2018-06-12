@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'cts-modelform',
@@ -14,12 +14,21 @@ export class ModelformComponent implements OnInit {
 
   ngOnInit() {
     this.hobbyForm = new FormGroup({
-          fn:new FormControl(),
-          ln:new FormControl(),
+          fname:new FormControl("", Validators.compose([
+            Validators.minLength(3),
+            Validators.pattern('^[a-zA-Z]+$')
+          ])),
+          lname:new FormControl("", this.myCustomMinLength),
           hobby:new FormControl()
     })
 
 
+  }
+
+  myCustomMinLength(control){
+    if(control.value.length <3){
+      return {'lname':true}
+    }
   }
 
   submitUserHobby = function(user){
