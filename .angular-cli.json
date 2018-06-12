@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "cts",
       "styles": [
+        "../helloversion6/node_modules/bootstrap/dist/css/bootstrap.css",
         "styles.css"
       ],
       "scripts": [],

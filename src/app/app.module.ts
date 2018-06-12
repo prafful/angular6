@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbProgressbar } from "@ng-bootstrap/ng-bootstrap";
+
 
 import { AppComponent } from './app.component';
 import { FatherComponent } from './family/father/father.component';
@@ -73,7 +76,9 @@ const myRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(myRoutes)
+    RouterModule.forRoot(myRoutes),
+    NgbModule.forRoot()
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
