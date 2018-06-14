@@ -21,8 +21,6 @@ export class ModelformComponent implements OnInit {
           lname:new FormControl("", this.myCustomMinLength),
           hobby:new FormControl()
     })
-
-
   }
 
   myCustomMinLength(control){

@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { NgbProgressbar } from "@ng-bootstrap/ng-bootstrap";
+import { HttpClientModule } from "@angular/common/http";
+
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,11 @@ import { TemplateformComponent } from './forms/template/templateform/templatefor
 import { ModelformComponent } from './forms/template/modelform/modelform.component';
 import { AutoSearchComponent } from './search/auto-search/auto-search.component';
 import { SearchFilterPipe } from './my-pipes/search-filter.pipe';
+import { ConsumeLocalServiceComponent } from './consume/consume-local-service/consume-local-service.component';
+import { LocalserviceService } from './myservices/localservice.service';
+import { ConsumeLocalService2Component } from './consume/consume-local-service2/consume-local-service2.component';
+import { ConsumeRemoteServiceComponent } from './consume/consume-remote-service/consume-remote-service.component';
+import { RemoteserviceService } from './myservices/remoteservice.service';
 
 
 const myRoutes: Routes = [
@@ -54,6 +59,18 @@ const myRoutes: Routes = [
           {
              path:'searchfilter',
              component:AutoSearchComponent 
+          },
+          {
+            path:'localservice',
+            component:ConsumeLocalServiceComponent
+          },
+          {
+            path:'localservice2',
+            component:ConsumeLocalService2Component
+          },
+          {
+            path:'remoteservice',
+            component:ConsumeRemoteServiceComponent
           }
 ]
 
@@ -70,17 +87,21 @@ const myRoutes: Routes = [
     TemplateformComponent,
     ModelformComponent,
     AutoSearchComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    ConsumeLocalServiceComponent,
+    ConsumeLocalService2Component,
+    ConsumeRemoteServiceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(myRoutes),
-    NgbModule.forRoot()
+    HttpClientModule
+    
   
   ],
-  providers: [],
+  providers: [LocalserviceService, RemoteserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
