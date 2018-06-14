@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RemoteserviceService } from '../../myservices/remoteservice.service';
 import { UserInfo } from "../../interface/user-info";
 import { Observable } from 'rxjs/Observable';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'cts-consume-remote-service',
   templateUrl: './consume-remote-service.component.html',
@@ -20,9 +21,16 @@ export class ConsumeRemoteServiceComponent implements OnInit {
    console.log("this is remote data")
    this.observableUserInfo = this.remoteservice.getRemoteDataFromService()
    this.observableUserInfo.subscribe(
-    user =>{
+    (user) =>{
       this.userinfo = user
       console.log(this.userinfo)
+    },
+    (err:HttpErrorResponse) =>{
+      if(err.error instanceof Error){
+        console.log('Server-side error')
+      }else{
+        console.log('Client side error')
+      }
     }
    )
 
