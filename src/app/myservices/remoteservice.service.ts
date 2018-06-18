@@ -10,7 +10,7 @@ export class RemoteserviceService {
   constructor(private httpclient:HttpClient) { }
 
   getRemoteDataFromService():Observable<UserInfo>{
-    return this.httpclient.get<UserInfo>('https://jsonplaceholder.typicode.com/users1')
+    return this.httpclient.get<UserInfo>('https://jsonplaceholder.typicode.com/users')
   }
 
 

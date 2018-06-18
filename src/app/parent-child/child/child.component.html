@@ -1,0 +1,9 @@
+<p>
+  child works! I am coming from parent component - {{myNameChild}}
+</p>
+
+<br>
+Received form parent: <input type="text" [(ngModel)]="myNameChild">
+<br>
+<button (click)="sendToParentNow(myNameChild)">Click to send to parent</button>
+

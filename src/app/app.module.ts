@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 
@@ -23,6 +24,9 @@ import { LocalserviceService } from './myservices/localservice.service';
 import { ConsumeLocalService2Component } from './consume/consume-local-service2/consume-local-service2.component';
 import { ConsumeRemoteServiceComponent } from './consume/consume-remote-service/consume-remote-service.component';
 import { RemoteserviceService } from './myservices/remoteservice.service';
+import { BasicanimationComponent } from './animation/basicanimation/basicanimation.component';
+import { ParentComponent } from './parent-child/parent/parent.component';
+import { ChildComponent } from './parent-child/child/child.component';
 
 
 const myRoutes: Routes = [
@@ -71,6 +75,14 @@ const myRoutes: Routes = [
           {
             path:'remoteservice',
             component:ConsumeRemoteServiceComponent
+          },
+          {
+           path:'animation',
+           component:BasicanimationComponent 
+          },
+          {
+            path:'eventbinding',
+            component:ParentComponent
           }
 ]
 
@@ -90,14 +102,18 @@ const myRoutes: Routes = [
     SearchFilterPipe,
     ConsumeLocalServiceComponent,
     ConsumeLocalService2Component,
-    ConsumeRemoteServiceComponent
+    ConsumeRemoteServiceComponent,
+    BasicanimationComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(myRoutes),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
     
   
   ],

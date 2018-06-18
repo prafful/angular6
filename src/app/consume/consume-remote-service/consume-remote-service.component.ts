@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RemoteserviceService } from '../../myservices/remoteservice.service';
 import { UserInfo } from "../../interface/user-info";
-import { Observable } from 'rxjs/Observable';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'cts-consume-remote-service',
   templateUrl: './consume-remote-service.component.html',
